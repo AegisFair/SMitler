@@ -216,8 +216,48 @@ html.mm-opened
 			&:last-child
 				margin-left: 13px
 				margin-right: inherit
-
-
+.header-social
+	position: absolute
+	display: flex
+	right: 0
+	height: 100%
+	border-left: rgba(#fff,.1) 1px solid
+	top: 0
+	padding: 0 12px
+.soc
+	margin: auto
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		color: #2C2C2C
+		font-size: 17px
+		display: block
+		background-color: rgba(#fff,.2)
+		height: 38px
+		width: 38px
+		text-align: center
+		margin: 16px 0
+		line-height: 38px
+		border-radius: 50%
+		transition: background-color .25s ease
+		&:hover
+			background-color: rgba(#fff,.4)
+.header-contacts
+	position: absolute
+	bottom: 0
+	left: 0
+	border-top: rgba(#fff,.15) 1px solid
+	padding: 12px 0
+	width: 100%
+	background-color: rgba(#151515,.15)
+	.fa
+		margin-right: 5px
+		color: #555
+	.phone-h
+		font-family: firasans,serif
+		text-align: center
 
 
 .text-center
