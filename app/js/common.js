@@ -26,8 +26,11 @@ $(function(){
                 carouselService();
             },100);
     })*/
-    $('.carousel-services-composition h3').each(function(){
+    $('.carousel-services-composition .h3').each(function(){
         $(this).html($(this).html().replace(/(\S+)\s*$/,'<span>$1</span>'))
+    })
+    $('section .h2').each(function(){
+        $(this).html($(this).html().replace(/^(\S+)/,'<span>$1</span>'))
     })
 
     $('.carousel-services').owlCarousel({
