@@ -35,7 +35,7 @@ gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
-	// .pipe(autoprefixer(['last 15 versions']))
+	.pipe(autoprefixer(['last 15 versions']))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
@@ -49,6 +49,7 @@ gulp.task('scripts', function() {
 		'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
 		'app/libs/equalHeights/equalheights.js',
 		'app/libs/fotorama/fotorama.js',
+		'app/libs/selectize/js/standalone/selectize.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

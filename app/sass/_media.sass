@@ -12,6 +12,9 @@
         font-size: 14px
     .carousel-services-item
         flex-direction: column
+    .call
+        background-size: cover
+        background-position: center
 // ≥992px
 +media-breakpoint-down(md)
     .welcome
@@ -21,6 +24,11 @@
     .review,
     .partners
         padding: 8% 0
+    .call
+        &::before
+           width: 100%
+        .callback
+            padding: 12% 0
 // ≥768px
 +media-breakpoint-down(sm)
     .header-contacts 
@@ -50,6 +58,7 @@
         &__nav
             &-wrap
                 position: static
+                padding: 0
 
 /*==========  Mobile First  ==========*/
 

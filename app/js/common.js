@@ -53,7 +53,38 @@ $(function(){
         }
 
     });
-
+    
+    $('select').selectize({
+        sortField: 'text'
+    })
+   
+    //E-mail Ajax Send
+    // FOR DEPLOY!
+    /*$("form.callback").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "/maiill.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            th.find('.success').addClass('active').css('display','flex')//.hide().fadeIn();
+            setTimeout(function() {
+                // Done Functions
+                console.log(th)
+                th.find('.success').removeClass('active').fadeOut();
+                th.trigger("reset");
+            }, 3000);
+        });
+        return false;
+    });*/
+    // Alternative ajax, for presentation
+    $('.callback button').on('click', function(){
+        $('.success').addClass('active').css('display','flex');
+        setTimeout(function() {
+            $('.success').removeClass('active').fadeOut();
+        }, 3000);
+    })
+    //
     function carouselService(){
         $('.carousel-services-item').each(function (){
                 var contentHeight = $(this).find('.carousel-services-content').outerHeight();

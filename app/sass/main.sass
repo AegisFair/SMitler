@@ -19,13 +19,6 @@ body
 	overflow-y: scroll
 	color: $text
 	opacity: 1
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
 	&.ishome
 		.site-header
 			min-height: 700px
@@ -37,6 +30,13 @@ body
 				position: absolute
 				width: 100%
 				z-index: 1
+// input, textarea
+// 	border: #666 1px solid
+// 	outline: none
+// 	&:focus:required:invalid
+// 		border-color: red
+// 	&:required:valid
+// 		border-color: green
 .h1, .h2, .h3, .h4, .h5, .h6
 	line-height: 1.4
 	text-transform: uppercase
@@ -385,6 +385,20 @@ $colors: $blue, $red, $accent
 	p
 		margin: 30px 0
 		font-size: 18px
+.call
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: 10%
+	&.inverse
+		background-color: #fff
+	&::before
+		content: ''
+		position: absolute
+		width: 50%
+		height: 100%
+		right: 0
+		background-color: rgba($accent,.92)
+
 .section-overlay
 	&::before
 		content: ''
@@ -427,4 +441,103 @@ $colors: $blue, $red, $accent
 .fotorama__nav:before, .fotorama__stage:before,
 .fotorama__nav:after, .fotorama__stage:after
 	display: none
+
+input,
+textarea,
+select,
+.selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active
+	background-color: transparent
+	border: rgba(#000,.1) 1px solid
+	border-bottom: rgba(#000,.1) 2px solid
+	border-radius: 2px
+	padding: 8px 22px
+	outline: none
+	display: inline-block
+	font-size: 16px
+	color: #333
+select
+	padding: 10px 22px
+.selectize-control .selectize-input
+	box-shadow: none
+	line-height: inherit
+	text-align: left
+	input
+		font-size: 16px
+	&.dropdown-active
+		&::before
+			background: transparent
+.selectize-control.single
+	.selectize-input
+		&::after
+			border: none
+			content: '\f107'
+			font-family: fontawesome
+			position: absolute
+			right: 30px
+			top: 12px
+		&.dropdown-active
+			&::after
+				content: '\f106'
+	.selectize-dropdown
+		font-size: 15px
+		border: none
+		border-radius: 0
+		text-align: left
+		&-content
+			.option
+				padding: 10px 22px
+				&.active
+					background-color: lighten($accent, 25)
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	// display: flex
+	// z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all 0.5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+.callback
+	padding: 25% 0
+	position: relative
+	&-logo
+		img
+			width: 100px
+			height: auto
+	.formhead
+		margin: 0
+		font-size: 30px
+		text-transform: uppercase
+		font-weight: 800
+	p
+		margin: 0
+	input,
+	textarea,
+	select,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.input-active
+		color: #fff
+		width: 100%
+		margin-top: 17px
+		&::placeholder
+			color: #fff
+		
+	select
+		option
+			color: #333
+	.button
+		margin-top: 40px
 @import "media" // Always at the end
